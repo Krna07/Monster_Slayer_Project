@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monster Slayer Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="background-video">
+    <source src="106316-672600359.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Music Control Button -->
+  <button id="music-toggle" onclick="toggleMusic()">Mute Music</button>
+
+  <!-- Login Screen -->
+  <div id="login-screen">
+    <h1>Login</h1>
+    <input type="text" id="username" placeholder="Enter username" required>
+    <button onclick="login()">Start Game</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" style="display:none;">
+
+    <button id="pause-btn" onclick="togglePause()">Pause</button>
+
+    <div id="game-container">
+
+      <!-- Left Panel: Questions & Timer -->
+      <div id="left-panel">
+        <h2>Earn Points</h2>
+        <p>Time Left:</p>
+        <div id="time-bar-container">
+          <div id="time-bar"></div>
+        </div>
+        <div id="question"></div>
+        <input type="text" id="answer" placeholder="Your Answer">
+        <button onclick="submitAnswer()">Submit</button>
+        <p id="points-msg"></p>
+        <p>Your Points: <span id="points">0</span></p>
+      </div>
+
+      <!-- Right Panel: Monster Battle -->
+      <div id="right-panel">
+        <h2>Monster Battle</h2>
+        <p>Player: <span id="player-name"></span></p>
+        <p>Level: <span id="level">1</span></p>
+        <p>Monster HP: <span id="monster-hp"></span></p>
+        <img src="https://i.imgur.com/L3CkAAn.png" alt="Monster" id="monster-img">
+        <button onclick="attack()">Attack Monster</button>
+        <p id="battle-msg"></p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id="game-over-screen" style="display:none;">
+    <h1 class="GameOver">🎮 Game Over!</h1>
+    <p id="final-msg"></p>
+    <button onclick="window.location.reload()">Play Again</button>
+
+    <footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Help Center</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Refund Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Tesla Studios. All rights reserved.</p>
+  </div>
+</footer>
+
+  </div>
+
+  <!-- Background Music -->
+  <audio id="background-music" src="roblox-minecraft-fortnite-video-game-music-358426.mp3" loop></audio>
+
+  <!-- Time-up Sound -->
+  <audio id="time-up-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-failure-arcade-alert-240.wav"></audio>
+
+  <!-- Level Victory Sound -->
+  <audio id="level-victory-sound" src="a-hero-of-the-80s-126684.mp3"></audio>
+
+  <!-- Victory Sound -->
+  <audio id="victory-sound" src="your-victory-sound.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
